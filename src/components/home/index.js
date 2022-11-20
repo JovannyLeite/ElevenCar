@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native"
 
-//import SettingsSvg from "../../../img/icons/settings.svg"
+import SettingsSvg from "../../../img/icons/settings.svg"
 
 import styles from "./style"
 
 
-export default function Home() {
+export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.line}>
@@ -14,7 +14,7 @@ export default function Home() {
                     <View>
                         <View>
                             <TouchableOpacity onPress={() => navigation.navigate("Settings")} style={styles.boxSettings} >
-
+                            <SettingsSvg style={styles.iconSettings}/>
                             </TouchableOpacity>
                         </View>
                         <TouchableOpacity onPress={() => setGo()}>
