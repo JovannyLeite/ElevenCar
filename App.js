@@ -16,7 +16,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-        <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

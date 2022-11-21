@@ -46,12 +46,23 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize: 36,
     },
-    iconSettings:{
+    boxOptions: {
+        backgroundColor: "#FFFFFF",
+        height: 48,
+        width: "90%",
+        borderRadius: 10,
+        flexDirection: "column",
+        padding: 5,
         marginTop: 20,
-        marginLeft: "85%",
-        alignItems:"flex-end",
-        height: 36,
-        width: 36,
+        marginLeft: 19,  
+        flexDirection: "column",    
     },
+    options:{
+        textAlign: "center",
+        fontSize: 18,
+        marginTop: 5,
+        
+    },
+    
 })
 export default styles;

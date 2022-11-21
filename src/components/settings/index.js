@@ -9,23 +9,61 @@ export default function Settings() {
     return (
         <View style={styles.container}>
             <View style={styles.line}>
-                <View style={styles.frontcontainer}></View>
+                <View style={styles.frontcontainer}>
 
+                <View>
+                    <TouchableOpacity onPress={() => setGo()}>
+                        <View style={styles.boxText}>
+                            <View style={styles.box}>
+                                <Text style={styles.status}>Ip do Carrinho:</Text>
+                            </View>
+                            <View style={styles.boxDirection}>
+                                <Text style={styles.direction}>192.168.0.109</Text>
+                            </View>
 
-                <TouchableOpacity onPress={() => setGo()}>
-                    <View style={styles.boxText}>
-                        <View style={styles.box}>
-                            <Text style={styles.status}>Status: Ativo</Text>
-                            <Text style={styles.status}>Conectado em: 192.168.0.101</Text>
                         </View>
-                        <View style={styles.boxDirection}>
-                            <Text style={styles.direction}>Frente</Text>
-                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setGo()}>
+                        <View style={styles.boxText}>
+                            <View style={styles.box}>
+                                <Text style={styles.status}>Ip do Servidor:</Text>
+                            </View>
+                            <View style={styles.boxDirection}>
+                                <Text style={styles.direction}>192.168.0.109</Text>
+                            </View>
 
-                    </View>
-                </TouchableOpacity>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setGo()}>
+                        <View style={styles.boxText}>
+                            <View style={styles.box}>
+                                <Text style={styles.status}>Status Atual:</Text>
+                            </View>
+                            <View style={styles.boxDirection}>
+                                <Text style={styles.direction}>Ativo</Text>
+                            </View>
+
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setGo()}>
+                        <View style={styles.boxOptions}>
+                            
+                                <Text style={styles.options}>Cancelar</Text>
+                            
+
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setGo()} style={styles.buttomOptions}>
+                        <View style={styles.boxOptions}>
+                            
+                                <Text style={styles.options}>Atualizar</Text>
+                            
+
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
-
+        </View>
     );
 }

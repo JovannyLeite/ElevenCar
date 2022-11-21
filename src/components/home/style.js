@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#001427',
-        marginTop: 24,
+        paddingTop: 24,
         padding: 10,
       },
       line: {
@@ -46,10 +46,13 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize: 36,
     },
-    iconSettings:{
+    boxSettings:{
         marginTop: 20,
-        marginLeft: "85%",
         alignItems:"flex-end",
+        marginRight: 20,
+    },
+    iconSettings:{
+        
         height: 36,
         width: 36,
     },

@@ -12,8 +12,8 @@ export default function Home({ navigation }) {
             <View style={styles.line}>
                 <View style={styles.frontcontainer}>
                     <View>
-                        <View>
-                            <TouchableOpacity onPress={() => navigation.navigate("Settings")} style={styles.boxSettings} >
+                        <View style={styles.boxSettings}>
+                            <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
                             <SettingsSvg style={styles.iconSettings}/>
                             </TouchableOpacity>
                         </View>
