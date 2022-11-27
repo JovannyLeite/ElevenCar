@@ -7,18 +7,26 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/components/home';
 import Settings from './src/components/settings';
 
+import globalStyles from './src/styles/global';
+
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-        <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={globalStyles.container}>
+      <StatusBar style='light' translucent />
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{
+          cardStyle: {
+            backgroundColor: globalStyles.container.backgroundColor
+          }
+        }}>
+          <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+          <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </View>
   );
 }
 

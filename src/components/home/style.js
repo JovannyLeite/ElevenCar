@@ -4,24 +4,13 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#001427',
-        paddingTop: 24,
-        padding: 10,
-      },
-      line: {
-        backgroundColor: '#FFFFFF',
-        height: "100%",
-        width: "100%",
+        margin: 10,
+        borderWidth: 4,
+        borderColor: '#FFFFFF',
+        borderStyle: 'solid',
         borderRadius: 8,
-        padding: 3,
-      },
-      frontcontainer: {
-        backgroundColor: '#001427',
-        backgroundColor: '#001427',
-        height: "100%",
-        width: "100%",
-        borderRadius: 8,
-      },
+        alignItems: 'center'
+    },
     boxText: {
         backgroundColor: "#87CEFC",
         height: 100,
@@ -30,7 +19,6 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         padding: 5,
         marginTop: 20,
-        marginLeft: 19,   
     },
     status: {
         fontSize: 12,
@@ -47,14 +35,38 @@ const styles = StyleSheet.create({
         fontSize: 36,
     },
     boxSettings:{
+        width: '90%',
         marginTop: 20,
-        alignItems:"flex-end",
-        marginRight: 20,
+        alignItems:"flex-end"
     },
     iconSettings:{
         
         height: 36,
         width: 36,
     },
+    circleButtonContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingBottom: 80
+    },
+    circleButton: {
+        backgroundColor: '#FFFFFF',
+        width: 280,
+        height: 280,
+        borderRadius: 320
+    },
+    circleButtonRow: {
+        width: '100%',
+        height: `${100/3}%`,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    circleButtonAction: {
+        width: `${100/3}%`,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 })
 export default styles;
