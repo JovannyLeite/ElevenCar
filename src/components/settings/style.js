@@ -4,24 +4,13 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#001427',
-        marginTop: 24,
-        padding: 10,
-      },
-      line: {
-        backgroundColor: '#FFFFFF',
-        height: "100%",
-        width: "100%",
+        margin: 10,
+        borderWidth: 4,
+        borderColor: '#FFFFFF',
+        borderStyle: 'solid',
         borderRadius: 8,
-        padding: 3,
-      },
-      frontcontainer: {
-        backgroundColor: '#001427',
-        backgroundColor: '#001427',
-        height: "100%",
-        width: "100%",
-        borderRadius: 8,
-      },
+        paddingBottom: 16
+    },
     boxText: {
         backgroundColor: "#87CEFC",
         height: 100,
