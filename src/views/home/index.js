@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { FontAwesome } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
+import { FontAwesome, Entypo } from '@expo/vector-icons';
 import axios from 'axios';
 
+import { connect } from "socket.io-client";
+
 const instance = axios.create({
-    baseURL: 'http://192.168.0.108:3333/'
+    baseURL: 'http://192.168.0.103:3333/'
 });
 
 import SettingsSvg from "../../../img/icons/settings.svg"
@@ -16,27 +17,46 @@ const IconSize = 36;
 
 export default function Home({ navigation }) {
     const [lastAction, setLastAction] = useState('-')
+    const [socket, setSocket] = useState(null)
+
+    useEffect(() => {
+        try {
+            const socket = connect('http://192.168.0.103:3333', {
+                reconnectionDelayMax: 10000,
+                query: {
+                  "name": "Controle - App"
+                }
+            });
+            setSocket(socket)
+
+            return () => { socket.disconnect() }
+        } catch (error) {
+            console.log(error)
+        }
+    }, [])
 
     async function handleSendAction(event) {
         console.log(event)
         setLastAction(event.action)
 
-        try {
-            const response = await instance.post('/action', {
-                event: `${event.event} ${event.action}`,
-                type: "HTTP/POST",
-                client: {
-                  IP: "192.168.0.3",
-                  name: "Aplicativo"
-                },
-                to: {
-                  IP: "192.168.0.8",
-                  name: "API"
-                },
-                value: JSON.stringify(event)
-            })
+        const action = {
+            event: `${event.event} ${event.action}`,
+            type: "HTTP/POST",
+            emitter: socket.id,
+            client: {
+              IP: "192.168.0.3",
+              name: "Aplicativo"
+            },
+            to: {
+              IP: "192.168.0.8",
+              name: "API"
+            },
+            value: JSON.stringify(event)
+        }
 
-            console.log(response.data)
+        try {
+            await instance.post('/action', action)
+            // socket.emit('log', action)
         } catch (error) {
             console.log(error)
         }
