@@ -1,15 +1,17 @@
 import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
-
     container: {
+        display: 'flex',
         flex: 1,
         margin: 10,
         borderWidth: 4,
         borderColor: '#FFFFFF',
         borderStyle: 'solid',
         borderRadius: 8,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column'
     },
     boxText: {
         backgroundColor: "#87CEFC",
@@ -44,29 +46,31 @@ const styles = StyleSheet.create({
         height: 36,
         width: 36,
     },
-    circleButtonContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingBottom: 80
+    input: {
+        backgroundColor: "#FFFFFF",
+        height: 48,
+        width: "90%",
+        borderRadius: 10,
+        flexDirection: "column",
+        padding: 5,
+        flexDirection: "column",
+        marginTop: 8
     },
-    circleButton: {
-        backgroundColor: '#FFFFFF',
-        width: 280,
-        height: 280,
-        borderRadius: 320
+    buttonOptions: {
+        backgroundColor: "#87CEFC",
+        height: 48,
+        width: "90%",
+        borderRadius: 10,
+        flexDirection: "column",
+        padding: 5,
+        flexDirection: "column",
+        marginTop: 16  
     },
-    circleButtonRow: {
-        width: '100%',
-        height: `${100/3}%`,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center'
+    options:{
+        textAlign: "center",
+        fontSize: 18,
+        marginTop: 5,
+        
     },
-    circleButtonAction: {
-        width: `${100/3}%`,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
 })
 export default styles;
