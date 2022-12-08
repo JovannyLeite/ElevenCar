@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import { useConfig } from "../../contexts/Config";
 
@@ -16,9 +17,12 @@ export default function Start() {
 
     const navigation = useNavigation()
 
-    function handleSubmit() {
+    async function handleSubmit() {
         setServerIp(serverIpValue)
         setCarIp(carIpValue)
+
+        await AsyncStorage.setItem('@elevencar/serverIp', serverIpValue)
+        await AsyncStorage.setItem('@elevencar/carIp', carIpValue)
 
         navigation.navigate("Home")
     }

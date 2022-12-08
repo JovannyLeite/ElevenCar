@@ -34,9 +34,13 @@ export default function Home({ navigation }) {
                     <View style={styles.circleButtonRow}>
                         <TouchableOpacity
                             style={styles.circleButtonAction}
-                            onPress={() => handleSendAction({
+                            onPressIn={() => handleSendAction({
                                 event: "press",
                                 action: "up"
+                            })}
+                            onPressOut={() => handleSendAction({
+                                event: "press",
+                                action: "stop"
                             })}
                         >
                             <FontAwesome name="chevron-up" size={IconSize} color="black" />
@@ -45,9 +49,13 @@ export default function Home({ navigation }) {
                     <View style={styles.circleButtonRow}>
                         <TouchableOpacity
                             style={styles.circleButtonAction}
-                            onPress={() => handleSendAction({
+                            onPressIn={() => handleSendAction({
                                 event: "press",
                                 action: "left"
+                            })}
+                            onPressOut={() => handleSendAction({
+                                event: "press",
+                                action: "stop"
                             })}
                         >
                             <FontAwesome name="chevron-left" size={IconSize} color="black" />
@@ -63,9 +71,13 @@ export default function Home({ navigation }) {
                         </TouchableOpacity>
                         <TouchableOpacity
                             style={styles.circleButtonAction}
-                            onPress={() => handleSendAction({
+                            onPressIn={() => handleSendAction({
                                 event: "press",
                                 action: "right"
+                            })}
+                            onPressOut={() => handleSendAction({
+                                event: "press",
+                                action: "stop"
                             })}
                         >
                             <FontAwesome name="chevron-right" size={IconSize} color="black" />
@@ -74,9 +86,13 @@ export default function Home({ navigation }) {
                     <View style={styles.circleButtonRow}>
                         <TouchableOpacity
                             style={styles.circleButtonAction}
-                            onPress={() => handleSendAction({
+                            onPressIn={() => handleSendAction({
                                 event: "press",
                                 action: "down"
+                            })}
+                            onPressOut={() => handleSendAction({
+                                event: "press",
+                                action: "stop"
                             })}
                         >
                             <FontAwesome name="chevron-down" size={IconSize} color="black" />

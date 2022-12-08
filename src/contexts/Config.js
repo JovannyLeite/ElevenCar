@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import axios from 'axios';
 
 import { connect } from "socket.io-client";
@@ -20,6 +21,21 @@ const ConfigProvider = ({ children }) => {
     setSocket([])
     setServerIp("")
   }
+
+  useEffect(() => {
+    async function getStoragedIPs() {
+      try {
+        const serverIpValue = await AsyncStorage.getItem('@elevencar/serverIp')
+        const carIpValue = await AsyncStorage.getItem('@elevencar/carIp')
+
+        setServerIp(serverIpValue)
+        setCarIp(carIpValue)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getStoragedIPs()
+  }, [])
 
   useEffect(() => {
     if (serverIp !== "") {
@@ -102,7 +118,7 @@ const ConfigProvider = ({ children }) => {
     }
 
     try {
-        await axios.post(`http://${carIp}/action`, action)
+        await axios.get(`http://${carIp}/${event.action}`)
         if (serverIp !== carIp) {
           await axios.post(`http://${serverIp}/action`, action)
         }
